@@ -5,7 +5,7 @@ export type PageSize = PredefinedPageSize | CustomPageSize;
 
 export interface CustomPageSize {
   width: number;
-  height: number | 'auto';
+  height: number | "auto";
 }
 
 export interface Position {
@@ -14,63 +14,63 @@ export interface Position {
 }
 
 export type PredefinedPageSize =
-  | '4A0'
-  | '2A0'
-  | 'A0'
-  | 'A1'
-  | 'A2'
-  | 'A3'
-  | 'A4'
-  | 'A5'
-  | 'A6'
-  | 'A7'
-  | 'A8'
-  | 'A9'
-  | 'A10'
-  | 'B0'
-  | 'B1'
-  | 'B2'
-  | 'B3'
-  | 'B4'
-  | 'B5'
-  | 'B6'
-  | 'B7'
-  | 'B8'
-  | 'B9'
-  | 'B10'
-  | 'C0'
-  | 'C1'
-  | 'C2'
-  | 'C3'
-  | 'C4'
-  | 'C5'
-  | 'C6'
-  | 'C7'
-  | 'C8'
-  | 'C9'
-  | 'C10'
-  | 'RA1'
-  | 'RA2'
-  | 'RA3'
-  | 'RA4'
-  | 'SRA1'
-  | 'SRA2'
-  | 'SRA3'
-  | 'SRA4'
-  | 'EXECUTIVE'
-  | 'FOLIO'
-  | 'LEGAL'
-  | 'LETTER'
-  | 'TABLOID';
+  | "4A0"
+  | "2A0"
+  | "A0"
+  | "A1"
+  | "A2"
+  | "A3"
+  | "A4"
+  | "A5"
+  | "A6"
+  | "A7"
+  | "A8"
+  | "A9"
+  | "A10"
+  | "B0"
+  | "B1"
+  | "B2"
+  | "B3"
+  | "B4"
+  | "B5"
+  | "B6"
+  | "B7"
+  | "B8"
+  | "B9"
+  | "B10"
+  | "C0"
+  | "C1"
+  | "C2"
+  | "C3"
+  | "C4"
+  | "C5"
+  | "C6"
+  | "C7"
+  | "C8"
+  | "C9"
+  | "C10"
+  | "RA1"
+  | "RA2"
+  | "RA3"
+  | "RA4"
+  | "SRA1"
+  | "SRA2"
+  | "SRA3"
+  | "SRA4"
+  | "EXECUTIVE"
+  | "FOLIO"
+  | "LEGAL"
+  | "LETTER"
+  | "TABLOID";
 
-export type PageOrientation = 'portrait' | 'landscape';
+export type PageOrientation = "portrait" | "landscape";
 
-export type PageBreak = 'before' | 'after';
+export type PageBreak = "before" | "after";
 
 export type Size =
   | number // absolute
-  | 'auto'
-  | '*'
+  | "auto"
+  | "*"
   | string; // percentage
 
 export interface TFontDictionary {
@@ -111,14 +111,17 @@ export type DynamicBackground = (
   pageSize: ContextPageSize
 ) => Content | null | undefined;
 
-export type Margins = number | [number, number] | [number, number, number, number];
+export type Margins =
+  | number
+  | [number, number]
+  | [number, number, number, number];
 
-export type Decoration = 'underline' | 'lineThrough' | 'overline';
-export type DecorationStyle = 'dashed' | 'dotted' | 'double' | 'wavy';
+export type Decoration = "underline" | "lineThrough" | "overline";
+export type DecorationStyle = "dashed" | "dotted" | "double" | "wavy";
 
-export type Alignment = 'left' | 'right' | 'justify' | 'center';
+export type Alignment = "left" | "right" | "justify" | "center";
 
-export type DynamicRowSize = (row: number) => number | 'auto';
+export type DynamicRowSize = (row: number) => number | "auto";
 
 export interface CustomTableLayout {
   hLineWidth?: DynamicLayout<number> | undefined;
@@ -163,7 +166,7 @@ export type TableCell =
 
 export interface Table {
   body: TableCell[][];
-  widths?: '*' | 'auto' | Size[] | undefined;
+  widths?: "*" | "auto" | Size[] | undefined;
   heights?: number | number[] | DynamicRowSize | undefined;
   headerRows?: number | undefined;
   dontBreakRows?: boolean | undefined;
@@ -171,7 +174,10 @@ export interface Table {
   layout?: TableLayout | undefined;
 }
 
-export type PredefinedTableLayout = 'noBorders' | 'headerLineOnly' | 'lightHorizontalLines';
+export type PredefinedTableLayout =
+  | "noBorders"
+  | "headerLineOnly"
+  | "lightHorizontalLines";
 export type TableLayout = string | PredefinedTableLayout | CustomTableLayout;
 
 export interface Style {
@@ -331,8 +337,8 @@ export interface ContentQr extends ContentBase {
   foreground?: string | undefined;
   fit?: number | undefined;
   version?: number | undefined;
-  eccLevel?: 'L' | 'M' | 'Q' | 'H' | undefined;
-  mode?: 'numeric' | 'alphanumeric' | 'octet' | undefined;
+  eccLevel?: "L" | "M" | "Q" | "H" | undefined;
+  mode?: "numeric" | "alphanumeric" | "octet" | undefined;
   mask?: number | undefined;
 }
 
@@ -364,25 +370,29 @@ export type Column = Content & {
 };
 
 export type OrderedListType =
-  | 'lower-alpha'
-  | 'upper-alpha'
-  | 'lower-roman'
-  | 'upper-roman'
-  | 'none';
+  | "lower-alpha"
+  | "upper-alpha"
+  | "lower-roman"
+  | "upper-roman"
+  | "none";
 export type OrderedListElement = Content & {
   counter?: number | undefined;
   listType?: OrderedListType | undefined;
 };
 
-export type UnorderedListType = 'square' | 'circle' | 'none';
+export type UnorderedListType = "square" | "circle" | "none";
 export type UnorderedListElement = Content & {
   listType?: UnorderedListType | undefined;
 };
 
-export type CanvasElement = CanvasRect | CanvasPolyline | CanvasLine | CanvasEllipse;
+export type CanvasElement =
+  | CanvasRect
+  | CanvasPolyline
+  | CanvasLine
+  | CanvasEllipse;
 
 export interface CanvasRect extends CanvasLineElement, CanvasFilledElement {
-  type: 'rect';
+  type: "rect";
   x: number;
   y: number;
   w: number;
@@ -391,23 +401,23 @@ export interface CanvasRect extends CanvasLineElement, CanvasFilledElement {
 }
 
 export interface CanvasPolyline extends CanvasLineElement, CanvasFilledElement {
-  type: 'polyline';
+  type: "polyline";
   points: Array<{ x: number; y: number }>;
   closePath?: boolean | undefined;
-  lineCap?: 'round' | 'square' | undefined;
+  lineCap?: "round" | "square" | undefined;
 }
 
 export interface CanvasLine extends CanvasLineElement {
-  type: 'line';
+  type: "line";
   x1: number;
   y1: number;
   x2: number;
   y2: number;
-  lineCap?: 'round' | 'square' | undefined;
+  lineCap?: "round" | "square" | undefined;
 }
 
 export interface CanvasEllipse extends CanvasLineElement, CanvasFilledElement {
-  type: 'ellipse';
+  type: "ellipse";
   x: number;
   y: number;
   r1: number;
@@ -431,8 +441,8 @@ export interface CanvasLineElement {
     | undefined;
 }
 
-export type ImageAlignment = 'left' | 'right' | 'center';
-export type ImageVerticalAlignment = 'top' | 'bottom' | 'center';
+export type ImageAlignment = "left" | "right" | "center";
+export type ImageVerticalAlignment = "top" | "bottom" | "center";
 
 export interface ImageCover {
   width?: number | undefined;
@@ -445,7 +455,7 @@ export interface StyleDictionary {
   [name: string]: Style;
 }
 
-export type PDFVersion = '1.3' | '1.4' | '1.5' | '1.6' | '1.7' | '1.7ext3';
+export type PDFVersion = "1.3" | "1.4" | "1.5" | "1.6" | "1.7" | "1.7ext3";
 
 export interface Watermark {
   /** watermark text */
@@ -534,7 +544,10 @@ export interface BufferOptions {
   bufferPages?: boolean | undefined;
   tableLayouts?: { [key: string]: CustomTableLayout } | undefined;
   autoPrint?: boolean | undefined;
-  progressCallback?: ((progress: number) => void) | undefined;
+  progressCallback?:
+    | ((progress: number) => void)
+    | ((item: any, x: number, y: number, options: any, pageNb: number) => void)
+    | undefined;
 }
 
 // disable automatic exporting

@@ -546,7 +546,7 @@ export interface BufferOptions {
   autoPrint?: boolean | undefined;
   progressCallback?:
     | ((progress: number) => void)
-    | ((inline: Style, x: number, y: number, options: any, pageNb: number, item: any) => void)
+    | ((inline: any, x: number, y: number, options: any, pageNb: number) => void)
     | undefined;
 }
 
